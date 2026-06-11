@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Protein Calendar View</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+        }
+
+        .good {
+            color: green;
+        }
+
+        .bad {
+            color: red;
+        }
+        body ::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+
+            background-image: url("high-protein.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 400px;
+
+            opacity: 0.05;
+
+            pointer-events: none;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+
+<h1>📅 Mening Protein Calendarim</h1>
+
+<div id="calendar"></div>
+
+<script>
+function getData() {
+    return JSON.parse(localStorage.getItem("proteinData")) || {};
+}
+
+function renderCalendar() {
+    const data = getData();
+    const container = document.getElementById("calendar");
+    container.innerHTML = "";
+
+    for (let date in data) {
+
+        const consumed = data[date].consumed;
+        const goal = data[date].goal;
+        const remaining = (goal - consumed).toFixed();
+
+        container.innerHTML += `
+            <div class="card">
+                <h3>${date}</h3>
+
+                <p>🍗 Iste'mol qilindi: ${consumed}g</p>
+                <p>🎯 Ehtiyojingiz: ${goal}g</p>
+
+                <p class="${remaining <= 0 ? 'good' : 'bad'}">
+                    ${remaining <= 0
+                        ? "Kunlik protein ehtiyojingiz bajarildi ✅"
+                        : "⚠️ Qoldiq: " + remaining + "g"}
+                </p>
+            </div>
+        `;
+    }
+}
+renderCalendar();
+</script>
+</body>
+</html>

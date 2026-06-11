@@ -1,0 +1,329 @@
+.kg-input, .age-input {
+    width: 200px;
+    height: 30px;
+    font-size: 13px;
+    border-radius: 0px;
+    border: 1px solid rgb(122, 148, 171);
+    box-shadow: 1px 2px 4px rgb(161, 165, 170);
+}
+
+.kg-input {
+    margin-bottom: 15px;
+    width: 220px;
+    margin-top: 15px;
+}
+
+.age-input {
+    margin-bottom: 15px;
+    border-radius: 0px;
+    border: 1px solid rgb(122, 148, 171);
+    box-shadow: 1px 2px 4px rgb(161, 165, 170);
+    height: 30px;
+}
+
+.gender-d {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.h-sen, .h3-text {
+    color: rgb(42, 119, 187);
+    margin-bottom: 10px;
+}
+
+.option-select {
+    margin-bottom: 15px;
+    height: 30px;
+    font-size: 13px;
+}
+
+.goal-option {
+    height: 30px;
+    font-size: 13px;
+}
+
+.protein-table {
+    width: 600px;
+}
+
+body {
+    background-color: rgb(243, 248, 255);
+    margin-left: 50px;
+}
+
+.calculate-button {
+    height: 40px;
+    width: 100px;
+    font-size: 16px;
+    background-color: rgb(42, 119, 187);
+    border: 0px;
+    color: aliceblue;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.calculator-box {
+    background-color: rgb(245, 245, 245);
+    border: 1px solid rgb(48, 137, 214);
+    border-radius: 0px;
+    padding: 20px 24px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgb(122, 148, 171);
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    vertical-align: middle;
+    margin-right: 4px;
+    margin-top: 0;
+    margin-bottom: 0;
+    box-shadow: 1px 2px 4px rgb(161, 165, 170);
+    transition: border-color 0.15s ease;
+}
+
+input[type="radio"]::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 2px solid rgb(42, 119, 187);
+    background: transparent;
+    transition: transform 0.10s ease, background 0.10s ease, border-color 0.10s ease;
+}
+
+input[type="radio"]:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+    background: rgb(200, 200, 200);
+    border-color: rgb(200, 200, 200);
+}
+
+input[type="radio"]:checked {
+    border-color: rgb(42, 119, 187);
+}
+
+input[type="radio"]:checked::after {
+    transform: translate(-50%, -50%) scale(1);
+    background: transparent;
+    border-color: rgb(42, 119, 187);
+}
+
+
+#modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+#modal-box {
+    position: relative;
+    background: white;
+    padding: 35px 40px;
+    border: 1px solid rgb(48, 137, 214);
+    text-align: center;
+    width: 320px;
+    animation: fadeIn 0.3s ease;
+}
+
+#modal-box h2 {
+    color: rgb(42, 119, 187);
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+#modal-box p {
+    color: rgb(100, 100, 100);
+    font-size: 13px;
+    margin-bottom: 16px;
+}
+
+#name-input {
+    width: 100%;
+    height: 38px;
+    font-size: 14px;
+    border: 1px solid rgb(122, 148, 171);
+    box-shadow: 1px 2px 4px rgb(161, 165, 170);
+    margin-bottom: 15px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+#name-input:focus {
+    border-color: rgb(42, 119, 187);
+    box-shadow: 0 0 0 3px rgba(42, 119, 187, 0.2);
+}
+
+#submit-btn {
+    height: 40px;
+    width: 110px;
+    font-size: 15px;
+    background-color: rgb(42, 119, 187);
+    border: 0;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    letter-spacing: 0.5px;
+}
+
+#submit-btn:hover {
+    background-color: rgb(30, 90, 150);
+}
+
+#close-btn {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: rgb(180, 180, 180);
+    transition: color 0.2s ease;
+}
+
+#close-btn:hover {
+    color: rgb(42, 119, 187);
+}
+
+#result-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#result-box {
+    margin: 15px;
+    padding: 15px 20px;
+    background-color: rgb(245, 245, 255);
+    border: 1px solid rgb (48, 137, 214);
+    display: inline-block;
+}
+
+#result-box h3 {
+    color: rgb(42, 119, 187);
+    margin-bottom: 5px;
+}
+
+#result-box p {
+    font-size: 28px;
+    font-weight: bold;
+    color: rgb(42, 119, 187);
+}
+
+#result-overlay2 {
+    margin-top: 500px;
+    color: rgb(42, 119, 187);
+    font-size: large;
+}
+
+#result-model {
+    background-color: white;
+    padding: 35px 40px;
+    border: 1px solid rgb(48, 137, 214);
+    text-align: center;
+    width: 320px;
+    animation: fadeIn 0.3s ease;
+}
+
+#result-model h2 {
+    color: rgb(42, 119, 187);
+    margin-bottom: 0px;
+    font-size: 20px;
+}
+
+#result-model p {
+    font-size: 36px;
+    font-weight: bold;
+    color: rgb(42, 119, 187);
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+#result-model button {
+    height: 40px;
+    width: 250px;
+    font-size: 15px;
+    background-color: rgb(42, 119, 187);
+    border: 0;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#result-model button:hover {
+    background-color: rgb(30, 90, 150);
+}
+
+
+.protein-gram,
+.date-consumed {
+    height: 30px;
+    font-size: 12px;
+    border: 1px solid rgb(42, 119, 187);
+    box-shadow: 1px 2px 4px rgb(161, 165, 170);
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+
+.protein-add-button {
+    height: 40px;
+    width: 70px;
+    background-color: rgb(42, 119, 187);
+    border: 0;
+    color: aliceblue;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+#welcome {
+    color: rgb(42, 119, 187);
+}
+.clear-button {
+    margin-top: 15px;
+    height: 30px;
+    width: 80px;
+    background-color: rgb(42, 119, 187);
+    border: 0px;
+    border-radius: 5px;
+    color: aliceblue;
+    font-size: 13px;
+}
+.link-html {
+    color: rgb(42, 119, 187);
+    font-size: large;
+}
+
+.box-result {
+    border: 1px solid  rgb(42, 119, 187) ;
+    padding: 20px;
+    margin-bottom: 25px;
+    width: 200px;
+    background-color:  rgb(255, 255, 255);
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Protein calculator</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<div id="modal-overlay">
+<div id="modal-box">
+<button id="close-btn" onclick="closeModal()">✕</button>
+<img src="high-protein.png" style="width: 100px; height: 100px; object-fit: contain;">       
+<h2>Xush kelibsiz!</h2>
+<p>Davom etish uchun ismingizni kiriting</p>
+<input type="text" id="name-input" placeholder="Ismingiz...">
+<button id="submit-btn" onclick="saveName()">Kirish →</button>
+</div>
+</div>
+
+<h1 class="h-sen">Protein Calculator</h1>
+<h4>Bu kalkulyator sizning kundalik protein ehtiyojingizni aniqlashga yordam beradi. Natija yosh, jins va faollik darajangizga qarab hisoblanadi.
+Shifokor nazoratida parhez tutayotganlar yoki surunkali kasalligi borlar uchun ham qulay vosita hisoblanadi.</h4>
+
+<div class="calculator-box">
+<div>
+<input type="number" placeholder="  Yoshingizni kiriting " min="10" max="120" class="age-input">
+</div>
+<div class="gender-option">
+  Jinsingizni tanlang
+<input type="radio" name="gender" value="male" class="male-radio"> Erkak
+<input type="radio" name="gender" value="female" class="female-radio"> Ayol
+</div>
+<div>
+<input type="number" placeholder=" Tana og'irligingizni kiriting [kg]" class="kg-input">
+</div>
+<select class="option-select">
+<option value="">Haftasiga necha marta shug'ullanasiz?</option>
+<option>0~1</option>
+<option>2~3</option>
+<option>3~4</option>
+<option>4~5</option>
+<option>5~6</option>
+<option>Har kuni</option>
+</select>
+<div>
+    <select class="goal-option">
+<option value="">Maqsadingiz nima?</option>
+<option>Muskul yig'ish</option>
+<option>Tanadagi yog'ni kamaytirish</option>
+<option>Hozirgi ko'rinishni saqlab turish</option>
+</select>
+</div>
+<div>
+<button class="calculate-button">Hisoblash</button>
+</div>
+</div>
+
+<div id="result-overlay" style="display: none;">
+    <div id="result-model">
+        <img src="high-protein.png" style="width: 110px; height: 110px; object-fit: contain;">
+        <h2>Kunlik Protein Ehtiyojingiz</h2>
+        <p id="result-text"></p>
+        <a href="protein-calendar.html">
+            <button onclick="document.getElementById('result-overlay').style.display='none'">Protein kalendar rejimiga o'tish</button>
+        </a>
+    </div>
+</div>
+
+<h4>
+    Muhim Eslatma <i class="fa-solid fa-triangle-exclamation"></i>
+</h4>
+<p>
+    Protein — organizm uchun muhim oziq modda bo'lib, mushaklar, teri, soch va boshqa to'qimalarning qurilishi hamda tiklanishida ishtirok etadi.
+    Ayniqsa sport bilan shug'ullanuvchilar uchun protein mushaklarning o'sishi va mashg'ulotdan keyingi tiklanish jarayonida muhim ahamiyatga ega.
+</p>
+<p>
+   Ushbu ko'rsatkich sizning jismoniy faolligingiz, vazningiz, yoshingiz va maqsadingiz asosida hisoblanadigan umumiy fitness bahosidir.
+   Yuqori natija odatda faol turmush tarzini, pastroq natija esa jismoniy faollikni oshirish mumkinligini anglatadi. Bu ko'rsatkich tibbiy tashxis emas,
+    balki sog'lom ovqatlanish va mashg'ulot rejasini tanlashga yordam beruvchi yo'riqnoma hisoblanadi.
+</p>
+<p>
+    Homilador yokida kasal ayollar tanasi odatda belgilangandan biroz ko'proq oqsil talab qiladi.
+</p>
+<p>
+    Kerakli ma'lumotlarni kiritganingizdan keyin albatta "Hisoblash" tugmasini bosing!
+    Ma'lumotlaringiz kiritilgan holda saqlanib qoladi va shu ma'lumotlarga asoslanib kunlik oqsil miqdori hisoblaniladi. "Hisoblash" tugmasini bosganiningizdan so'ng,
+    boshqa sahifaga yo'naltirilasiz va u yerdan har kunlik istemol qilgan oqsil miqdoringizni nazorat qilishingiz mumkin.
+</p>
+<h3 class="h3-text">Mahsulotlarda Protein miqdori</h3>
+<img src="/protein-table.png" class="protein-table">
+
+<script src="script.js" defer></script>
+
+</body>
+</html>
